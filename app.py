@@ -1,6 +1,5 @@
 from flask import Flask , render_template, request
 import requests 
-import json
 
 app = Flask(__name__)
 
@@ -19,7 +18,6 @@ def get_weatherdata():
         }
     response = requests.get(url,params=param)
     data = response.json()
-   
     return f"data : {data}"
 
 if __name__ == '__main__':
